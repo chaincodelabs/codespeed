@@ -16,6 +16,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='result',
             name='extra_data',
-            field=django.contrib.postgres.fields.jsonb.JSONField(default=dict, help_text='Store unstructured data about a result'),
+            field=django.contrib.postgres.fields.jsonb.JSONField(default=dict, help_text='Store unstructured data about a result', null=True, blank=True),
         ),
     ]

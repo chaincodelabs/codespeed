@@ -232,6 +232,8 @@ class Result(models.Model):
     environment = models.ForeignKey(Environment, related_name="results")
     extra_data = JSONField(
         default=dict,
+        blank=True,
+        null=True,
         help_text="Store unstructured data about a result",
     )
 
