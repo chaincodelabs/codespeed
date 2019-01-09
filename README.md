@@ -1,3 +1,13 @@
+## This is a fork
+
+The original codespeed is [here](https://github.com/tobami/codespeed).
+
+This fork:
+
+  - requires use of postgresql
+  - adds an `extra_data` JSON field to results
+  - has a Python3 fix or two
+
 # Codespeed
 [![Build Status](https://travis-ci.org/tobami/codespeed.png?branch=master)](https://travis-ci.org/tobami/codespeed)
 [![PyPI version](https://img.shields.io/pypi/v/codespeed.svg)](https://pypi.python.org/pypi/codespeed)

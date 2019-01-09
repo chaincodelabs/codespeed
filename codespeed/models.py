@@ -10,6 +10,7 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
+from django.contrib.postgres.fields import JSONField
 
 from .commits.github import GITHUB_URL_RE
 
@@ -229,6 +230,10 @@ class Result(models.Model):
     executable = models.ForeignKey(Executable, related_name="results")
     benchmark = models.ForeignKey(Benchmark, related_name="results")
     environment = models.ForeignKey(Environment, related_name="results")
+    extra_data = JSONField(
+        default=dict,
+        help_text="Store unstructured data about a result",
+    )
 
     def __str__(self):
         return u"%s: %s" % (self.benchmark.name, self.value)
